@@ -1,21 +1,83 @@
-// TinyCompiler.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include "pch.h"
-#include <iostream>
-
+#include "globals.h"
+#include "scan.h"
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	while (true)
+	{
+		TokenType token =  GetNextToken();
+		if (token == ENDFILE)
+			break;
+		//If we didn't break
+		std::string tokenType;
+		switch (token)
+		{
+		case IF:
+			tokenType = "reserved";
+			break;
+		case THEN:
+			tokenType = "reserved";
+			break;
+		case ELSE:
+			tokenType = "reserved";
+			break;
+		case END:
+			tokenType = "reserved";
+			break;
+		case REPEAT:
+			tokenType = "reserved";
+			break;
+		case UNTIL:
+			tokenType = "reserved";
+			break;
+		case READ:
+			tokenType = "reserved";
+			break;
+		case WRITE:
+			tokenType = "reserved";
+			break;
+		case PLUS:
+			tokenType = "symbol";
+			break;
+		case MINUS:
+			tokenType = "symbol";
+			break;
+		case TIMES:
+			tokenType = "symbol";
+			break;
+		case DIV:
+			tokenType = "symbol";
+			break;
+		case EQUAL:
+			tokenType = "symbol";
+			break;
+		case LT:
+			break;
+			tokenType = "symbol";
+		case LP:
+			break;
+			tokenType = "symbol";
+		case RP:
+			break;
+			tokenType = "symbol";
+		case SEMI:
+			tokenType = "symbol";
+			break;
+		case ASSIGN:
+			tokenType = "symbol";
+			break;
+		case NUM:
+			tokenType = "number";
+			break;
+		case ID:
+			tokenType = "identifier";
+			break;
+		case ERROR:
+			tokenType = "error";
+			break;
+		default:
+			break;
+		}
+		std::cout << tokenString << ", " << tokenType << std::endl;
+	}
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
