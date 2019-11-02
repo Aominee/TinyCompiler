@@ -17,7 +17,7 @@ static int linePos = 0;
 
 static char GetNextChar()
 {
-	if (linePos >= currLine.length())
+	if (linePos >= currLine.length() || currLine == "")
 	{
 		//Attempt reading next line
 		if (std::getline(std::cin, currLine))

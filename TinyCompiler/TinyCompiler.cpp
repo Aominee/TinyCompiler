@@ -52,6 +52,7 @@ int main()
 			tokenType = "symbol";
 			break;
 		case LT:
+			tokenType = "symbol";
 			break;
 			tokenType = "symbol";
 		case LP:
